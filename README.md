@@ -4,6 +4,7 @@
 Translates American Sign Language (ASL) to text
 
 **Set up environment in Anaconda:**
+*Open Anaconda Prompt*
 conda create --name python35 python=3.5
 conda activate python35
 conda install scikit-learn #includes scipy, numpy (?)
