@@ -1,9 +1,9 @@
 # SensAI: ASL Translator
 
-*Description:*
+**Description:**
 Translates American Sign Language (ASL) to text
 
-*Set up environment in Anaconda:*
+**Set up environment in Anaconda:**
 conda create --name python35 python=3.5
 conda activate python35
 conda install scikit-learn #includes scipy, numpy (?)
@@ -13,7 +13,7 @@ pip install keras
 pip install opencv-python
 pip install pyyaml matplotlib 
 
-*To add to environment:*
+**To add to environment:**
 conda install jupyter
 conda install spyder
 pip install h5py
