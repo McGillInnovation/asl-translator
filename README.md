@@ -26,6 +26,7 @@
 </br> conda install cloudpickle
 </br> pip install pygame
 </br> pip install pyglet
+</br> conda install pillow
 
 **To add to environment:**
 </br> conda install jupyter
