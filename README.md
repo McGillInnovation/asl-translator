@@ -28,6 +28,8 @@
 </br> pip install pyglet
 </br> conda install pillow
 </br> pip install matplotlib
+</br> conda install lasagne
+</br> pip install nolearn
 
 **To add to environment:**
 </br> conda install jupyter
