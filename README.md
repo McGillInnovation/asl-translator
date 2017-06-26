@@ -25,6 +25,7 @@
 </br> pip install opencv-python
 </br> conda install cloudpickle
 </br> pip install pygame
+</br> pip install pyglet
 
 **To add to environment:**
 </br> conda install jupyter
