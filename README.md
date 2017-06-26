@@ -27,6 +27,7 @@
 </br> pip install pygame
 </br> pip install pyglet
 </br> conda install pillow
+</br> pip install matplotlib
 
 **To add to environment:**
 </br> conda install jupyter
