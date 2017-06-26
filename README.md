@@ -24,6 +24,7 @@
 </br> pip install keras
 </br> pip install opencv-python
 </br> conda install cloudpickle
+</br> pip install pygame
 
 **To add to environment:**
 </br> conda install jupyter
