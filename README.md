@@ -13,6 +13,7 @@
 </br> pip install keras
 </br> pip install opencv-python
 </br> pip install pyyaml matplotlib
+</br> conda install cloudpickle
 
 **Set up Python 2.7 environment in Anaconda:**
 </br> *Open Anaconda Prompt*
@@ -22,6 +23,7 @@
 </br> conda install theano
 </br> pip install keras
 </br> pip install opencv-python
+</br> conda install cloudpickle
 
 **To add to environment:**
 </br> conda install jupyter
