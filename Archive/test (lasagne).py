@@ -1,3 +1,6 @@
+# Test: CNN using Lasagne & NoLearn
+# http://blog.christianperone.com/2015/08/convolutional-neural-networks-and-feature-extraction-with-python/
+
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
