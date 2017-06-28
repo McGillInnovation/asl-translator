@@ -52,7 +52,7 @@ if model_name == "vgg16":
 	base_model = VGG16(weights=weights)
 	#model = Model(input=base_model.input, output=base_model.get_layer('fc1').output)
 	model = Model(inputs=base_model.inputs, outputs=base_model.get_layer('fc1').output)
-	image_size = (400, 400)
+	image_size = (224, 224)
 elif model_name == "vgg19":
 	base_model = VGG19(weights=weights)
 	model = Model(input=base_model.input, output=base_model.get_layer('fc1').output)
@@ -88,26 +88,31 @@ labels   = []
 
 # loop over all the labels in the folder (create dictionary of classes)
 for (i, label) in enumerate(train_labels):
-	print ("0 --- {}".format(label))
+	#print ("0 --- {}".format((i, label)))
 	cur_path = train_path + "\\" + label
-	for image_path in glob.glob(cur_path + "\\*.jpg"):
-		print ("1 --- {}".format(image_path))
-		img = image.load_img(image_path, target_size=image_size)
-		print ("2 --- {}".format(img))
-		x = image.img_to_array(img)
-		print ("3 --- {}".format(x))
-		x = np.expand_dims(x, axis=0) # ???
-		print ("4 --- {}".format(x))
-		x = preprocess_input(x)
-		print ("5 --- {}".format(x))
-		feature = model.predict(x)
-		print ("6 --- {}".format(feature))
-		flat = feature.flatten()
-		print ("7 --- {}".format(flat))
-		features.append(flat)
-		labels.append(label)
-		print ("[INFO] processed - {}".format(i))
-		break
+	#print ("0 --- {}".format(cur_path))
+	#for image_path in glob.glob(cur_path + "\\*.jpg"):
+	for root, directories, filenames in os.walk(cur_path):
+		for image_file in filenames:
+			print ("0 --- {}".format(image_file))
+			if image_file.endswith(".jpeg"):
+				image_path = os.path.join(cur_path, image_file)
+				print ("1 --- {}".format(image_path))
+				img = image.load_img(image_path, target_size=image_size)
+				#print ("2 --- {}".format(img))
+				x = image.img_to_array(img)
+				#print ("3 --- {}".format(x))
+				x = np.expand_dims(x, axis=0) # ???
+				#print ("4 --- {}".format(x))
+				x = preprocess_input(x)
+				#print ("5 --- {}".format(x))
+				feature = model.predict(x)
+				#print ("6 --- {}".format(feature))
+				flat = feature.flatten()
+				#print ("7 --- {}".format(flat))
+				features.append(flat)
+				labels.append(label)
+				print ("[INFO] processed - {}".format(i))
 	print ("[INFO] completed label - {}".format(label))
 
 # encode the labels using LabelEncoder

@@ -55,7 +55,7 @@ print "[INFO] training started..."
 (trainData, testData, trainLabels, testLabels) = train_test_split(np.array(features),
                                                                   np.array(labels),
                                                                   test_size=test_size,
-                                                                  random_state=seed) #???
+                                                                  random_state=seed) #EXPLAIN
 
 print "[INFO] splitted train and test data..."
 print "[INFO] train data  : {}".format(trainData.shape)
@@ -65,22 +65,26 @@ print "[INFO] test labels : {}".format(testLabels.shape)
 
 # use logistic regression as the model
 print("[INFO] creating model...")
-model = LogisticRegression(random_state=seed) #???
+model = LogisticRegression(random_state=seed) #EXPLAIN
 model.fit(trainData, trainLabels)
 
 # use rank-1 and rank-5 predictions
 print("[INFO] evaluating model...")
 f = open(results, "w")
-rank_1 = 0 #???
-rank_5 = 0 #???
+rank_1 = 0 #EXPLAIN
+rank_5 = 0 #EXPLAIN
 
 # loop over test data
 for (label, features) in zip(testLabels, testData):
 	# predict the probability of each class label and
 	# take the top-5 class labels
-	predictions = model.predict_proba(np.atleast_2d(features))[0]
-	predictions = np.argsort(predictions)[::-1][:5]
 
+	predictions = model.predict_proba(np.atleast_2d(features))[0] #EXPLAIN
+	#print ("shape1")
+	#print (predictions)
+	predictions = np.argsort(predictions)[::-1][:5]
+	#print ("shape2")
+	#print (predictions)
 	# rank-1 prediction increment
 	if label == predictions[0]: # comparing most likely prediction?
 		rank_1 += 1
@@ -98,7 +102,11 @@ f.write("Rank-1: {:.2f}%\n".format(rank_1))
 f.write("Rank-5: {:.2f}%\n\n".format(rank_5))
 
 # evaluate the model of test data
-preds = model.predict(testData)
+preds = model.predict(testData) #EXPLAIN
+
+# ...
+print "[INFO] train score : {}".format(model.score(trainData, trainLabels))
+print "[INFO] test score  : {}".format(model.score(testData, testLabels))
 
 # write the classification report to file
 f.write("{}\n".format(classification_report(testLabels, preds)))
@@ -114,7 +122,8 @@ f.close()
 print ("[INFO] confusion matrix")
 
 # get the list of training lables
-labels = sorted(list(os.listdir(train_path)))
+# maybe to label axis in matrix later, but not needed now
+# labels = sorted(list(os.listdir(train_path)))
 
 # plot the confusion matrix
 cm = confusion_matrix(testLabels, preds)
