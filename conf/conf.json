@@ -10,7 +10,7 @@
 	"results"         : "output\\signs\\vgg16\\results.txt",
 	"classifier_path" : "output\\signs\\vgg16\\classifier.cpickle",
 
-	"test_size"       : 0.10,
+	"test_size"       : 0.95,
 	"seed"            : 9,
 	"num_classes"     : 10
 }
