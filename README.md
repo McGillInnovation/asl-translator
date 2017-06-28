@@ -3,6 +3,10 @@
 **Description:**
 </br> Translates American Sign Language (ASL) to text
 
+**Key Annotations In Code:**
+</br> EDIT! ~ edit
+</br> [?????] or ? ~ question
+
 **Set up Python 3.5 environment in Anaconda:**
 </br> *Open Anaconda Prompt*
 </br> conda create --name python35 python=3.5
@@ -30,9 +34,19 @@
 </br> pip install matplotlib
 </br> conda install lasagne
 </br> pip install nolearn
+</br> pip install h5py
+</br> pip install seaborn
 
 **To add to environment:**
 </br> conda install jupyter
 </br> conda install spyder
-</br> pip install h5py
-</br> pip install seaborn argparse
+</br> pip install argparse
+
+**File structure:**
+</br> *conf.json* --- configuration file used to provide inputs to entire system; json file with key-value pair file format to store data effectively
+</br> The model key takes in any of these parameters - inceptionv3, resnet50, vgg16, vgg19 and xception.
+</br> The weights key takes the value imagenet specifying that we intend to use weights from imagenet. You can also set this None if you wish to train the network from scratch.
+</br> The include_top key takes the value false specifying that we are going to take the features from any intermediate layer of the network. You can set this to true if you want to extract features before the fully connected layers.
+</br> The test_size key takes the value in the range (0.10 - 0.90). This is to make a split between your overall data into training and testing.
+</br> The seed key takes any value to reproduce same results.
+</br> The num_classes specifies the number of classes considered for the image classification problem.
