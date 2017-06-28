@@ -3,12 +3,12 @@
 	"weights"         : "imagenet",
 	"include_top"     : false,
 
-	"train_path"      : "dataset\\signs",
-	"model_path"      : "output\\signs\\vgg16\\model",
-	"features_path"   : "output\\signs\\vgg16\\features.h5",
-	"labels_path"     : "output\\signs\\vgg16\\labels.h5",
-	"results"         : "output\\signs\\vgg16\\results.txt",
-	"classifier_path" : "output\\signs\\vgg16\\classifier.cpickle",
+	"train_path"      : "dataset\\trial1",
+	"model_path"      : "output\\trial1\\vgg16\\model",
+	"features_path"   : "output\\trial1\\vgg16\\features.h5",
+	"labels_path"     : "output\\trial1\\vgg16\\labels.h5",
+	"results"         : "output\\trial1\\vgg16\\results.txt",
+	"classifier_path" : "output\\trial1\\vgg16\\classifier.cpickle",
 
 	"test_size"       : 0.95,
 	"seed"            : 9,
