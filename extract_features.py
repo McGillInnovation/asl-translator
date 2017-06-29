@@ -26,7 +26,7 @@ import warnings
 warnings.simplefilter(action="ignore", category=FutureWarning)
 
 # load the user configs
-with open('conf\\conf.json') as f:    
+with open('conf\\conf_signs1&2_vgg16.json') as f:    
 	config = json.load(f)
 
 # config variables
@@ -92,7 +92,7 @@ for (i, label) in enumerate(train_labels):
 	#for image_path in glob.glob(cur_path + "\\*.jpg"):
 	for root, directories, filenames in os.walk(cur_path):
 		for image_file in filenames:
-			if image_file.endswith(".jpeg"):
+			if image_file.endswith(".jpeg") or image_file.endswith(".jpg"):
 				image_path = os.path.join(cur_path, image_file)
 				img = image.load_img(image_path, target_size=image_size)
 				x = image.img_to_array(img)
