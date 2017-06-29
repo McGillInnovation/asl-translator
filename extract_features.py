@@ -34,11 +34,9 @@ model_name = config["model"]
 weights = config["weights"]
 include_top = config["include_top"]
 train_path = config["train_path"]
+model_path = config["model_path"]
 features_path = config["features_path"]
 labels_path = config["labels_path"]
-test_size = config["test_size"]
-results = config["results"]
-model_path = config["model_path"]
 #weights_path = config["weights_path"]
 
 # start time
@@ -94,25 +92,17 @@ for (i, label) in enumerate(train_labels):
 	#for image_path in glob.glob(cur_path + "\\*.jpg"):
 	for root, directories, filenames in os.walk(cur_path):
 		for image_file in filenames:
-			print ("0 --- {}".format(image_file))
 			if image_file.endswith(".jpeg"):
 				image_path = os.path.join(cur_path, image_file)
-				print ("1 --- {}".format(image_path))
 				img = image.load_img(image_path, target_size=image_size)
-				#print ("2 --- {}".format(img))
 				x = image.img_to_array(img)
-				#print ("3 --- {}".format(x))
 				x = np.expand_dims(x, axis=0) # ???
-				#print ("4 --- {}".format(x))
 				x = preprocess_input(x)
-				#print ("5 --- {}".format(x))
 				feature = model.predict(x)
-				#print ("6 --- {}".format(feature))
 				flat = feature.flatten()
-				#print ("7 --- {}".format(flat))
 				features.append(flat)
 				labels.append(label)
-				print ("[INFO] processed - {}".format(i))
+				print ("[INFO] processed - {} - {}".format(i, image_file))
 	print ("[INFO] completed label - {}".format(label))
 
 # encode the labels using LabelEncoder
@@ -136,11 +126,11 @@ h5f_label.close()
 
 # save model and weights
 model_json = model.to_json()
-with open(model_path + "_(" + str(test_size) + ")" + ".json", "w") as json_file:
+with open(model_path + "\\model.json", "w") as json_file:
 	json_file.write(model_json)
 
 # save weights
-model.save_weights(model_path + "_(" + str(test_size) + ")" + ".h5")
+model.save_weights(model_path + "\\model.h5")
 print("[STATUS] saved model and weights to disk..")
 print("[STATUS] features and labels saved..")
 

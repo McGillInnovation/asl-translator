@@ -50,3 +50,10 @@
 </br> The test_size key takes the value in the range (0.10 - 0.90). This is to make a split between your overall data into training and testing.
 </br> The seed key takes any value to reproduce same results.
 </br> The num_classes specifies the number of classes considered for the image classification problem.
+
+**Commits:**
+</br> *After training:*
+</br> Dataset: signs1 (ASL3)
+</br> Pre-trained model: vgg16
+</br> Feature extraction time: 17:26-18:34
+</br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9, 0.95

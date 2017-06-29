@@ -24,13 +24,12 @@ with open('conf/conf.json') as f:
 	config = json.load(f)
 
 # config variables
-test_size = config["test_size"]
-seed = config["seed"]
+train_path = config["train_path"]
+model_path = config["model_path"]
 features_path = config["features_path"]
 labels_path = config["labels_path"]
-results = config["results"]
-classifier_path = config["classifier_path"]
-train_path = config["train_path"]
+test_size = config["test_size"]
+seed = config["seed"]
 num_classes = config["num_classes"]
 
 # import features and labels
@@ -58,6 +57,7 @@ print "[INFO] training started..."
                                                                   random_state=seed) #EXPLAIN
 
 print "[INFO] splitted train and test data..."
+print "[INFO] test size   : {}".format(test_size)
 print "[INFO] train data  : {}".format(trainData.shape)
 print "[INFO] test data   : {}".format(testData.shape)
 print "[INFO] train labels: {}".format(trainLabels.shape)
@@ -70,7 +70,7 @@ model.fit(trainData, trainLabels)
 
 # use rank-1 and rank-5 predictions
 print("[INFO] evaluating model...")
-f = open(results, "w")
+f = open(model_path + "\\results_(" + str(test_size) + ").txt", "w")
 rank_1 = 0 #EXPLAIN
 rank_5 = 0 #EXPLAIN
 
@@ -114,7 +114,7 @@ f.close()
 
 # dump classifier to file
 print("[INFO] saving model...")
-f = open(classifier_path, "w")
+f = open(model_path + "\\classifier_(" + str(test_size) + ").cpickle", "w")
 f.write(cPickle.dumps(model))
 f.close()
 
@@ -127,7 +127,6 @@ print ("[INFO] confusion matrix")
 
 # plot the confusion matrix
 cm = confusion_matrix(testLabels, preds)
-sns.heatmap(cm,
-            annot=True,
-            cmap="Set2")
-plt.show()
+sns.heatmap(cm, annot=True, cmap="Set2")
+#plt.show()
+plt.savefig(model_path + "\\matrix_(" + str(test_size) + ").png")
