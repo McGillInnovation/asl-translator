@@ -5,8 +5,6 @@
 
 	"train_path"      : "dataset\\signs1&2",
 	"model_path"      : "output\\signs1&2\\vgg16",
-	"features_path"   : "output\\signs1&2\\vgg16\\features.h5",
-	"labels_path"     : "output\\signs1&2\\vgg16\\labels.h5",
 
 	"test_size"       : 0.10,
 	"seed"            : 9,

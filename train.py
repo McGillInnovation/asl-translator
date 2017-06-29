@@ -20,21 +20,19 @@ from sklearn.metrics import confusion_matrix
 
 
 # load the user configs
-with open('conf/conf.json') as f:    
+with open('conf/conf_signs1&2_vgg16.json') as f:    
 	config = json.load(f)
 
 # config variables
 train_path = config["train_path"]
 model_path = config["model_path"]
-features_path = config["features_path"]
-labels_path = config["labels_path"]
 test_size = config["test_size"]
 seed = config["seed"]
 num_classes = config["num_classes"]
 
 # import features and labels
-h5f_data = h5py.File(features_path, 'r')
-h5f_label = h5py.File(labels_path, 'r')
+h5f_data = h5py.File(model_path + "\\features.h5", 'r')
+h5f_label = h5py.File(model_path + "\\labels.h5", 'r')
 
 features_string = h5f_data['dataset_1'] #???
 labels_string = h5f_label['dataset_1'] #???

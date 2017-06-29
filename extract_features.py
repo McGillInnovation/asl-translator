@@ -35,8 +35,6 @@ weights = config["weights"]
 include_top = config["include_top"]
 train_path = config["train_path"]
 model_path = config["model_path"]
-features_path = config["features_path"]
-labels_path = config["labels_path"]
 #weights_path = config["weights_path"]
 
 # start time
@@ -115,10 +113,10 @@ print ("[STATUS] training labels: {}".format(le_labels))
 print ("[STATUS] training labels shape: {}".format(le_labels.shape))
 
 # save features and labels
-h5f_data = h5py.File(features_path, 'w')
+h5f_data = h5py.File(model_path + "\\features.h5", 'w')
 h5f_data.create_dataset('dataset_1', data=np.array(features))
 
-h5f_label = h5py.File(labels_path, 'w')
+h5f_label = h5py.File(model_path + "\\labels.h5", 'w')
 h5f_label.create_dataset('dataset_1', data=np.array(le_labels))
 
 h5f_data.close()
