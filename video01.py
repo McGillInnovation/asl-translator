@@ -52,6 +52,8 @@ while(True):
     #        print("Error while applying image transformation with the following exception trace:\n{}".format(
     #            exception_traceback))
 
+    #waitkey changes the rate of grabbing screens. for a smooth video set it to 1
+    #to quit press Q
     if cv2.waitKey(1000) & 0xFF == ord('q'):
         break
 
