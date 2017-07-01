@@ -5,6 +5,7 @@
 
 	"train_path"      : "dataset\\signs1&2",
 	"model_path"      : "output\\signs1&2\\vgg16",
+	"frames_path"	  : "frames",
 
 	"test_size"       : 0.10,
 	"seed"            : 9,

@@ -5,7 +5,8 @@
 
 	"train_path"      : "dataset\\DATASET_NAME",
 	"model_path"      : "output\\DATASET_NAME\\MODEL_NAME",
-	"frames_path"	  : "frames",
+	"features_path"   : "output\\DATASET_NAME\\MODEL_NAME\\features.h5",
+	"labels_path"     : "output\\DATASET_NAME\\MODEL_NAME\\labels.h5",
 
 	"test_size"       : 0.10,
 	"seed"            : 9,
