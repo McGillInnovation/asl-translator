@@ -1,0 +1,47 @@
+Resizing image to 400...
+Done!
+Resizing image to 100...
+Done!
+Making background black...
+Done!
+Making skin white...
+Done!
+Removing arm...
+Done!
+Drawing contour around white color...
+Error while applying image transformation with the following exception trace:
+Traceback (most recent call last):
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\predict_from_camera.py", line 43, in main
+    frame = apply_image_transformation(frame)
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common\image_transformation.py", line 171, in apply_image_transformation
+    frame, contour_dimensions = draw_contours(frame)
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common\image_transformation.py", line 122, in draw_contours
+    frame, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+ValueError: too many values to unpack (expected 2)
+
+
+ERROR 3
+
+Resizing image to 400...
+Done!
+Resizing image to 100...
+Done!
+Making background black...
+Done!
+Making skin white...
+Done!
+Removing arm...
+Done!
+Drawing contour around white color...
+OpenCV Error: Assertion failed (npoints >= 0 && (depth == CV_32F || depth == CV_32S)) in cv::contourArea, file C:\bld\opencv_1496444098483\work\opencv-3.2.0\modules\imgproc\src\shapedescr.cpp, line 320
+Error while applying image transformation with the following exception trace:
+Traceback (most recent call last):
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\predict_from_camera.py", line 43, in main
+    frame = apply_image_transformation(frame)
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common\image_transformation.py", line 171, in apply_image_transformation
+    frame, contour_dimensions = draw_contours(frame)
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common\image_transformation.py", line 125, in draw_contours
+    largest_contour_index = find_largest_contour_index(contours)
+  File "C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common\image_transformation.py", line 107, in find_largest_contour_index
+    if cv2.contourArea(contours[contour_iterator]) > cv2.contourArea(contours[largest_contour_index]):
+cv2.error: C:\bld\opencv_1496444098483\work\opencv-3.2.0\modules\imgproc\src\shapedescr.cpp:320: error: (-215) npoints >= 0 && (depth == CV_32F || depth == CV_32S) in function cv::contourArea

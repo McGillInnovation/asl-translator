@@ -1,0 +1,140 @@
+(python35) C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code>2to3 "predict_from_camera (2to3).py"
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored predict_from_camera - 2to3.py
+--- predict_from_camera - 2to3.py       (original)
++++ predict_from_camera - 2to3.py       (refactored)
+@@ -24,14 +24,14 @@
+ def main():
+     model_name = "svm"
+     if model_name not in ['svm', 'logistic', 'knn']:
+-        print("Invalid model-name '{}'!".format(model_name))
++        print(("Invalid model-name '{}'!".format(model_name)))
+         return
+
+-    print("Using model '{}'...".format(model_name))
++    print(("Using model '{}'...".format(model_name)))
+
+     model_serialized_path = get_config(
+         "model_{}_serialized_path".format(model_name))
+-    print("Model deserialized from path '{}'".format(model_serialized_path))
++    print(("Model deserialized from path '{}'".format(model_serialized_path)))
+
+     camera = cv2.VideoCapture(0)
+
+@@ -51,14 +51,14 @@
+             #classifier_model = pickle.load(open(model_serialized_path),encoding='latin1')
+             predicted_labels = classifier_model.predict(frame_flattened)
+             predicted_label = predicted_labels[0]
+-            print("Predicted label = {}".format(predicted_label))
++            print(("Predicted label = {}".format(predicted_label)))
+             predicted_image = get_image_from_label(predicted_label)
+             predicted_image = resize_image(predicted_image, 200)
+             cv2.imshow("Prediction = '{}'".format(predicted_label), predicted_image)
+         except Exception:
+             exception_traceback = traceback.format_exc()
+-            print("Error while applying image transformation with the following exception trace:\n{}".format(
+-                exception_traceback))
++            print(("Error while applying image transformation with the following exception trace:\n{}".format(
++                exception_traceback)))
+         cv2.waitKey(2000)
+         cv2.destroyAllWindows()
+     cv2.destroyAllWindows()
+RefactoringTool: Files that need to be modified:
+RefactoringTool: predict_from_camera - 2to3.py
+
+(python35) C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code>2to3 "train_model (2to3).py"
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored train_model (2to3).py
+--- train_model (2to3).py       (original)
++++ train_model (2to3).py       (refactored)
+@@ -43,8 +43,8 @@
+
+
+ def read_images_transformed(images_transformed_path):
+-    print("\nReading the transformed images file located at path '{}'...".format(
+-        images_transformed_path))
++    print(("\nReading the transformed images file located at path '{}'...".format(
++        images_transformed_path)))
+
+     images = [] #make array?
+     labels = [] #make array?
+@@ -64,8 +64,8 @@
+ #creating k nearest neighbour
+ def generate_knn_classifier():
+     num_neighbours = 10
+-    print("\nGenerating KNN model with number of neighbours = '{}'...".format(
+-        num_neighbours))
++    print(("\nGenerating KNN model with number of neighbours = '{}'...".format(
++        num_neighbours)))
+     classifier_model = KNeighborsClassifier(n_neighbors=num_neighbours)
+     print("Done!\n")
+     return classifier_model
+@@ -93,7 +93,7 @@
+
+ #create train and test datasets based on a specified proportion/ratio to include in the train dataset
+ def divide_data_train_test(images, labels, ratio):
+-    print("\nDividing dataset in the ratio '{}' using `train_test_split()`:".format(ratio))
++    print(("\nDividing dataset in the ratio '{}' using `train_test_split()`:".format(ratio)))
+     ret = train_test_split(images, labels, test_size=ratio, random_state=0)
+     print("Done!\n")
+     return ret
+@@ -105,7 +105,7 @@
+     #If you are gonna work with command line arguments, you probably want to use sys.argv.
+     model_name = sys.argv[1]
+     if model_name not in ['svm', 'logistic', 'knn']:
+-        print("Invalid model-name '{}'!".format(model_name))
++        print(("Invalid model-name '{}'!".format(model_name)))
+         return
+
+     #get model file path
+@@ -113,8 +113,8 @@
+         'model_{}_output_dir_path'.format(model_name))
+     model_stats_file_path = os.path.join(
+         model_output_dir_path, "stats-{}.txt".format(model_name))
+-    print("Model stats will be written to the file at path '{}'.".format(
+-        model_stats_file_path))
++    print(("Model stats will be written to the file at path '{}'.".format(
++        model_stats_file_path)))
+
+     with open(model_stats_file_path, "w") as model_stats_file:
+         images_transformed_path = get_config('images_transformed_path')
+@@ -136,8 +136,8 @@
+         #not sure what dumping the model means....storing? saving new version?
+         model_serialized_path = get_config(
+             'model_{}_serialized_path'.format(model_name))
+-        print("\nDumping the trained model to disk at path '{}'...".format(
+-            model_serialized_path))
++        print(("\nDumping the trained model to disk at path '{}'...".format(
++            model_serialized_path)))
+         joblib.dump(classifier_model, model_serialized_path) #used instead of pickle
+         print("Dumped\n")
+
+(python35) C:\Users\AanikaRahman\Documents\GitHub\ASL1\Sign-Language-Recognition\code\common>2to3 "image_transformation (2to3).py"
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored image_transformation (2to3).py
+--- image_transformation (2to3).py      (original)
++++ image_transformation (2to3).py      (refactored)
+@@ -4,7 +4,7 @@
+
+
+ def resize_image(frame, new_size):
+-    print("Resizing image to {}...".format(new_size))
++    print(("Resizing image to {}...".format(new_size)))
+     frame = cv2.resize(frame, (new_size, new_size))
+     print("Done!")
+     return frame
+RefactoringTool: Files that need to be modified:
+RefactoringTool: image_transformation (2to3).py
+
+
+RefactoringTool: Files that need to be modified:
+RefactoringTool: train_model (2to3).py
