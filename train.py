@@ -112,7 +112,8 @@ f.close()
 
 # dump classifier to file
 print("[INFO] saving model...")
-f = open(model_path + "\\classifier_(" + str(test_size) + ").cpickle", "w")
+f = open(model_path + "\\classifier_(" + str(test_size) + ").cpickle", "wb")
+#f = open(model_path + "\\classifier_(" + str(test_size) + ").cpickle", "w")
 f.write(cPickle.dumps(model))
 f.close()
 

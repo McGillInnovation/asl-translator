@@ -36,6 +36,7 @@
 </br> pip install nolearn
 </br> pip install h5py
 </br> pip install seaborn
+</br> pip install imutils
 
 **To add to environment:**
 </br> conda install jupyter
@@ -57,3 +58,14 @@
 </br> Pre-trained model: vgg16
 </br> Feature extraction time: 17:26-18:34
 </br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9, 0.95
+
+**Resoruces:**
+</br> https://gogul09.github.io/software/flower-recognition-deep-learning
+
+**Thoughts:**
+</br> *Segment the Hand region:*
+</br> 1. Background Subtraction
+</br> 2. Motion Detection and Thresholding
+</br> 3. Contour Extraction
+</br> 
+</br> 
