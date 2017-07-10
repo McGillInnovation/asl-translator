@@ -3,8 +3,10 @@
 **Description:**
 </br> Translates American Sign Language (ASL) to text
 
+# Set Up
+
 **Set up Python 2.7 environment in Anaconda:**
-</br> *Open Anaconda Prompt*
+</br> *Open Anaconda Prompt and enter the following commands:*
 
 ```
 conda create --name python27 python=2.7
@@ -50,8 +52,8 @@ pip install imutils
 * *Scenario 2*
 </br> Dataset: signs1&2 (ASL3, ASL1)
 </br> Pre-trained model: vgg16
-</br> Feature extraction time: ---
-</br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9, 0.95
+</br> Feature extraction time: 23:34-01:23
+</br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9
 
 # Thanks to the following:
 
