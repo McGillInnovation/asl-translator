@@ -9,27 +9,29 @@
 
 **Set up Python 2.7 environment in Anaconda:**
 </br> *Open Anaconda Prompt*
-</br> conda create --name python27 python=2.7
-</br> activate python27
-</br> conda install scikit-learn #includes scipy, numpy (?)
-</br> conda install theano
-</br> pip install keras
-</br> pip install opencv-python
-</br> conda install cloudpickle
-</br> pip install pygame
-</br> pip install pyglet
-</br> conda install pillow
-</br> pip install matplotlib
-</br> conda install lasagne
-</br> pip install nolearn
-</br> pip install h5py
-</br> pip install seaborn
-</br> pip install imutils
+
+```
+conda create --name python27 python=2.7
+activate python27
+conda install scikit-learn #includes scipy, numpy (?)
+conda install theano
+pip install keras
+pip install opencv-python
+conda install cloudpickle
+pip install pygame
+pip install pyglet
+conda install pillow
+pip install matplotlib
+conda install lasagne
+pip install nolearn
+pip install h5py
+pip install seaborn
+pip install imutils
+```
 
 # File Structure
 
-**conf.json**
-</br> *configuration file used to provide inputs to entire system; json file with key-value pair file format to store data effectively*
+**conf.json** --- *configuration file used to provide inputs to entire system; json file with key-value pair file format to store data effectively*
 * model: takes in any of these parameters - inceptionv3, resnet50, vgg16, vgg19 and xception
 * weights: takes the value imagenet specifying that we intend to use weights from imagenet; can also set this None if you wish to train the network from scratch
 * include_top: takes the value false specifying that we are going to take the features from any intermediate layer of the network; can set this to true if you want to extract features before the fully connected layers
@@ -53,7 +55,7 @@
 
 # Thanks to the following:
 
-**Mentors, Sponsors, Support**
+**Mentors, Sponsors, Support:**
 * [McGill Innovation Team & Participants](https://www.mcgill-innovation.com/ai-summer-lab)
 * [McGill Reasoning & Learning Lab](http://rl.cs.mcgill.ca/)
 * [CIFAR](https://www.cifar.ca/)
@@ -68,4 +70,4 @@
 * [Adriana Romero Soriano](https://www.linkedin.com/in/adriana-romero-a6415123/)
 
 **Resources:**
-</br> https://gogul09.github.io/software/flower-recognition-deep-learning
+* [Flower Recognition Deep Learning](https://gogul09.github.io/software/flower-recognition-deep-learning)
