@@ -3,7 +3,7 @@
 **Description:**
 </br> Translates American Sign Language (ASL) to text
 
-# Set Up
+## Set Up
 
 **Set up Python 2.7 environment in Anaconda:**
 </br> *Open Anaconda Prompt and enter the following commands:*
@@ -27,7 +27,7 @@ pip install seaborn
 pip install imutils
 ```
 
-# File Structure
+## File Structure
 
 **conf.json** --- *configuration file used to provide inputs to entire system; json file with key-value pair file format to store data effectively*
 * model: takes in any of these parameters - inceptionv3, resnet50, vgg16, vgg19 and xception
@@ -37,7 +37,7 @@ pip install imutils
 * seed: takes any value to reproduce same results
 * num_classes: specifies the number of classes considered for the image classification problem
 
-# Tracker
+## Tracker
 
 **Key Annotations In Code:**
 * EDIT! ~ edit
@@ -55,7 +55,7 @@ pip install imutils
 </br> Feature extraction time: 23:34-01:23
 </br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9
 
-# Thanks to the following:
+## Thanks to the following:
 
 **Mentors, Sponsors, Support:**
 * [McGill Innovation Team & Participants](https://www.mcgill-innovation.com/ai-summer-lab)
