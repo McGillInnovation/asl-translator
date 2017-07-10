@@ -3,10 +3,6 @@
 **Description:**
 </br> Translates American Sign Language (ASL) to text
 
-**Key Annotations In Code:**
-</br> EDIT! ~ edit
-</br> [?????] or ? ~ question
-
 **Set up Python 2.7 environment in Anaconda:**
 </br> *Open Anaconda Prompt*
 
@@ -41,13 +37,17 @@ pip install imutils
 
 # Tracker
 
+**Key Annotations In Code:**
+* EDIT! ~ edit
+* [?????] or ? ~ question
+
 **Commits after training:**
-</br> *Scenario 1*
+* *Scenario 1*
 </br> Dataset: signs1 (ASL3)
 </br> Pre-trained model: vgg16
 </br> Feature extraction time: 17:26-18:34
 </br> Models/results from test sizes: 0.1, 0.3, 0.5, 0.7, 0.9, 0.95
-</br> *Scenario 2*
+* *Scenario 2*
 </br> Dataset: signs1&2 (ASL3, ASL1)
 </br> Pre-trained model: vgg16
 </br> Feature extraction time: ---
