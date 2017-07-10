@@ -50,16 +50,16 @@
 **Resources:**
 </br> https://gogul09.github.io/software/flower-recognition-deep-learning
 
-**Acknowledgement:**
-</br> McGill Innovation Team + Participants
-</br> RL Lab
-</br> CIFAR
-</br> Ethan Macdonald
-</br> Negar Rostamzadeh
-</br> Pedro Oliveira Pinheiro
-</br> Anmol Jawandha
-</br> Perouz Taslakian
-</br> Adriana Romero Soriano
-</br> Alexis Smirnov
-</br> Nicolas Leroux 
-</br> Gheorghe Comanici
+# Thanks to the following:
+[McGill Innovation Team & Participants](https://www.mcgill-innovation.com/ai-summer-lab)
+[McGill Reasoning & Learning Lab](http://rl.cs.mcgill.ca/)
+[CIFAR](https://www.cifar.ca/)
+[Ethan Macdonald](https://www.linkedin.com/in/ethanbrycemacdonald/)
+[Negar Rostamzadeh](https://www.linkedin.com/in/nrostamzadeh/)
+[Pedro Oliveira Pinheiro](https://www.linkedin.com/in/pedro-oliveira-pinheiro-54630229/)
+[Anmol Jawandha]()
+[Perouz Taslakian]()
+[Alexis Smirnov](https://www.linkedin.com/in/alexissmirnov/)
+[Nicolas Le Roux](https://www.linkedin.com/in/lerouxni/)
+[Gheorghe Comanici](https://www.linkedin.com/in/gheorghe-comanici-b26819103/)
+[Adriana Romero Soriano](https://www.linkedin.com/in/adriana-romero-a6415123/)
